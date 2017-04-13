@@ -1,0 +1,96 @@
+<apex:page standardController="Hosted_Voice__c" showHeader="true" docType="html-4.01-strict">
+<div id="tabstrip" style="display:none;"> <ul> 
+<li class="k-state-active">Hosted Voice Stations</li>
+<li>Auto Attendants</li>
+<li>Queues</li>
+<li>Intercom &amp; Paging</li>
+<li>Do not port</li>
+<li>Remote Users</li>
+<li>Tasks</li>
+<li>Events</li>
+<li>Notes</li>
+</ul>
+<!-- Hosted Voice Stations -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Hosted_Voice_TN__c" FKName="Hosted_Voice__c" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="false"  ViewID="a32330000000xpXAAQ" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Auto Attendants -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Auto_Attendant__c" FKName="Hosted_Voice__c" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="true"  ViewID="a32330000000xpSAAQ" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Queues -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Queue__c" FKName="Hosted_Voice__c" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="true"  ViewID="a32330000000xpcAAA" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Intercom &amp; Paging -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Intercom_Paging__c" FKName="Hosted_Voice__c" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="true"  ViewID="a32330000000xphAAA" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Do not port -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Do_not_port__c" FKName="Hosted_Voice__c" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="true"  ViewID="a32330000000xpmAAA" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+ 
+<!-- Remote Users -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Remote_User__c" FKName="Hosted_Voice__c" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="true"  ViewID="a32330000000xpmAAA" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Tasks -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Task" FKName="WhatId" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="true"  ViewID="a32330000000xprAAA" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Events -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Event" FKName="WhatId" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="true"  ViewID="a32330000000xpwAAA" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+<!-- Notes -->
+<div style="overflow:hidden;"> 
+<CRMC_PP:Grid ObjectName="Note" FKName="ParentId" FKValue="{!Hosted_Voice__c.Id}"  DelayLoad="true"  ViewID="a32330000000xq1AAA" 
+ EnableNewButton="true"  EnableNewInline="true"  EnableEdit="true"  EnableActions="true"  EnableFieldChooser="true" 
+ EnableStickyViews="true"  EnableToolbar="true"  EnableViews="true"  EnableFormatting="true"  EnableReadingPane="true" />
+ <CRMC_PP:DrillUp /> 
+ </div>
+
+</div>
+<script>
+$(document).ready(function() {
+    $("#tabstrip").kendoTabStrip({
+      activate: function(e){
+        setTimeout(function(){          $(window).resize();        });
+      }
+    });
+    $("#tabstrip").css("display", "block");
+});
+ </script>
+</apex:page>

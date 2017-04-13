@@ -1,0 +1,137 @@
+<apex:page docType="html-5.0" action="{!redirect}" controller="SalesLeader.ISFullscreenController" showHeader="false" standardStylesheets="false" sidebar="false">
+
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600,600italic,700,900,900italic' rel='stylesheet' type='text/css' />
+  <apex:includeScript value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/js/jquery-1.8.3.min.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/js/jquery-ui-1.10.3.custom.min.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/js/jquery.imagesloaded.min.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/js/jquery.cookie.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/js/video.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/js/bigvideo.js')}" />
+  <apex:includeScript value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/js/jquery.videoBG.js')}" />
+  <apex:includeScript value="{!$Resource.SalesLeader__jQueryNoConflictJS}" />
+  <apex:stylesheet value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/css/bigvideo.css')}" />
+  <apex:stylesheet value="{!URLFOR($Resource.SalesLeader__ISFullscreenLib, '/lib/css/jquery-ui-1.10.3.custom.css')}" />
+  <apex:stylesheet value="{!$Resource.SalesLeader__ISFullscreenCSS}" />
+
+  <style type="text/css">
+    .splash {
+      background: #333 url({!URLFOR($Resource.ISFullscreenLib, '/lib/img/grid-bk1.png')}); }
+    .splash .background {
+      background: url({!URLFOR($Resource.ISFullscreenLib, '/lib/img/fullscreen_loading_bk2.png')}) no-repeat center;
+      background-size: cover; }
+
+    .spinner {
+      background: #333 url({!URLFOR($Resource.ISFullscreenLib, '/lib/img/grid-bk1.png')}); }
+    .spinner .background {
+      background: url({!URLFOR($Resource.ISFullscreenLib, '/lib/img/fullscreen_loading_bk2.png')}) no-repeat center;
+      background-size: cover; }
+
+    .logo .is2 {
+      background: url({!URLFOR($Resource.ISFullscreenLib, '/lib/img/logo_is_white.png')}) no-repeat; }
+    .slide {
+      background: url({!URLFOR($Resource.ISFullscreenLib, '/lib/img/grid-bk1.png')}) rgba(0,0,0,.4); }
+
+    .controls_container .controls .control_btn.configure {
+      background: url({!URLFOR($Resource.ISFullscreenLib, '/lib/img/wrench_icon_white.png')}) rgba(0,0,0,.8) no-repeat 93% 15px; }
+
+    .controls_container .controls .control_btn.close {
+      background: url({!URLFOR($Resource.ISFullscreenLib, '/lib/img/white_close_x_15x15.png')}) rgba(0,0,0,.8) no-repeat 90% 15px; }
+
+    .vjs-control-bar {
+     display: none; }
+
+     .vjs-error-display {
+     display: none; }
+
+  </style>
+
+  <script type="text/javascript">
+    var POLL_INTERVAL = 5*60*1000; // 5 minutes
+    var BG_VIDEO_MP4 = "{!$Resource.ISFullscreenBackgroundMP4}";
+    var BG_VIDEO_OGV = "{!$Resource.ISFullscreenBackgroundOGV}";
+    var NEW_DEAL_MP4 = "{!$Resource.ISFullscreenDealDetailMP4}";
+    var NEW_DEAL_OGV = "{!$Resource.ISFullscreenDealDetailOGV}";
+    var REMOTE_POLL_METHOD = "{!$RemoteAction.ISFullscreenController.poll}";
+    var SET_LAST_MO_METHOD = "{!$RemoteAction.ISFullscreenController.setShowLastMonthFlag}";
+  </script>
+
+  <div class="isfullscreen">
+
+    <div class="page">
+      <div class="slide-container">
+        <span class="vertical_aligner"></span>
+        <div class="slide">
+          <c:ISFullscreenBookingsByEmp />
+        </div>
+      </div>
+      <c:ISFullscreenTicker />
+      <c:ISFullscreenNewDeal />
+      <div class="logo">
+        <div class="parallelogram"></div>
+        <div class="is2"></div>
+      </div>
+      <div class="controls_container">
+        <div class="controls visible">
+          <a href="{!$Page.ISFullscreenLaunch}#configview" class="control_btn configure">Configure</a>
+          <a class="control_btn close" href="{!$Page.ISFullscreenLaunch}">Close</a>
+        </div>
+      </div>
+    </div>
+
+    <apex:form styleClass="warning_modal invalid_field">
+      <div class="warning_container">
+        <div class="warning_box">
+          <span class="warning_title">Invalid Field</span>
+          <span class="warning_msg">
+            Your configuration is using a field that no longer exists. Please click the button below to choose a new field.
+          </span>
+          <div class="warning_btn_box">
+            <a href="{!$Page.ISFullscreenLaunch}#configview" class="warning_btn">Configure</a>
+          </div>
+        </div>
+      </div>
+    </apex:form>
+
+    <div class="spinner">
+      <div class="background">
+        <span class="vertical_aligner"></span>
+        <img class="title" src="{!URLFOR($Resource.ISFullscreenLib, '/lib/img/stream_sales_leaderboard_text.png')}"></img>
+        <div class="loading_container">
+          <img class="indicator" src="{!URLFOR($Resource.ISFullscreenLib, '/lib/img/ajax-loader.gif')}"></img>
+          <span class="loading">loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <apex:outputPanel styleClass="warning_modal unknown_error">
+      <div class="warning_container">
+        <div class="warning_box">
+          <span class="warning_title">Unknown Error!</span>
+          <span class="warning_msg">
+            Oops! Sorry about that. An unknown error occurred.
+          </span>
+          <span class="warning_msg">
+            Please get in touch with us at <a href="mailto:leaderboard@insightsquared.com" target="_blank">leaderboard@insightsquared.com</a> so we can fix this bug.
+          </span>
+          <div class="warning_btn_box">
+            <a href="{!$Page.ISFullscreenLaunch}" class="warning_btn">Home</a>
+          </div>
+        </div>
+      </div>
+    </apex:outputPanel>
+
+  </div>
+  <!-- <button style="position:static;" class="debug_poll_button" onclick="poll()">Poll</button> -->
+
+  <apex:includeScript value="{!$Resource.SalesLeader__ISFullscreenJS}" />
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-41556131-2', 'force.com');
+  ga('send', 'pageview');
+  </script>
+</apex:page>

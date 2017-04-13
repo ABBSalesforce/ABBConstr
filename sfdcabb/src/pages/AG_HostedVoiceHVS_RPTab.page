@@ -1,0 +1,3 @@
+<apex:page standardController="Hosted_Voice_TN__c" showHeader="false" docType="html-4.01-strict">
+<apex:iframe height="1000px" src="/apex/AG_HostedVoice_RPTab?id={!Hosted_Voice_TN__c.Hosted_Voice__c}" rendered="{!Hosted_Voice_TN__c.Hosted_Voice__c!=null}"/>
+</apex:page>

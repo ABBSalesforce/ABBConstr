@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>34.0</apiVersion>
+    <availableInTouch>true</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>AG_Hosted_Voice_TN__c;AG_Auto_Attendant__c;AG_Queue__c;AG_Intercom_Paging__c;AG_Remote_User__c;AG_Task;AG_Event;AG_Note</description>
+    <label>Hosted Voice AG Layout</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>49</minorNumber>
+        <namespace>CRMC_PP</namespace>
+    </packageVersions>
+</ApexPage>

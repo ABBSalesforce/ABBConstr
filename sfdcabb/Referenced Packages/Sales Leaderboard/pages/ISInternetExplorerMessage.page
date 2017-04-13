@@ -1,0 +1,80 @@
+<apex:page >
+
+  <style type="text/css">
+    .ie_message_container {
+        width: 400px;
+        margin: 0 auto;
+        padding-top: 50px;
+        text-align: center;
+    }   
+
+    .ie_message {
+        height: 250px;
+        width: 400px;
+        background: url({!$Resource.IELogoGrey});
+        background-position: center center;
+        background-size: 200px 200px;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+        color: #424242;
+        font-size: 20px;
+        font-weight: normal;
+        font-style: italic;
+        text-align: center;
+        padding-top: 100px;
+        box-sizing: border-box;
+    }   
+
+    .download_cf_header {
+        color: #999999;
+        font-size: 20px;
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    .browser_link_container {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .browser_link {
+        display: inline-block;
+        height: 75px;
+        width: 75px;
+    }   
+
+    #chrome_link {
+        background: url({!$Resource.ChromeLogo});
+        background-position: center center;
+        background-size: 73px 73px;
+        background-repeat: no-repeat;
+        margin-right: 15px;
+    }
+
+    #firefox_link {
+        background: url({!$Resource.FirefoxLogo});
+        background-position: center center;
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+    }
+  </style>
+
+  <div class="ie_message_container">
+    <div class="ie_message">
+        The Fullscreen Leaderboard does not <br />
+        support Internet Explorer.
+    </div>
+
+    <br /><br /><br />
+        
+    <span class="download_cf_header">Download Chrome or Firefox</span>
+    <br />
+
+    <div class="browser_link_container">
+	    <a href="https://www.google.com/intl/en/chrome/browser/" class="browser_link" id="chrome_link"></a>
+	    <a href="http://www.mozilla.org/en-US/firefox/new/" class="browser_link" id="firefox_link"></a>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+</apex:page>

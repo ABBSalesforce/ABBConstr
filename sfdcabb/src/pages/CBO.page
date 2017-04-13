@@ -1,0 +1,187 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+
+<apex:includeScript value="{!$Resource.nav}"/>
+<!-- <apex:stylesheet value="{!$Resource.navCSS}" /> -->
+
+<link type="text/css" rel="stylesheet" href="prmary.css"></link>
+
+
+
+<body bgcolor="#000000">
+<br></br>
+<table align="right">
+<tr>
+<td><img src="images/blank.gif" height="1" width="1"></img></td>
+<td>
+
+<div id="navtable">
+
+      <table cellpadding="0" cellspacing="0" border="0" background="images/dot.jpg" bgcolor="#274c78">
+        <tr>
+          <td><apex:image url="{!$Resource.blue1}" height="20" width="20"></apex:image></td>
+          <td valign="middle"><a href="main.html" target="main"><font color="#ffffff"><b><center>Commercial Services</center></b></font></a></td>
+          <td><apex:image url="{!$Resource.blue2}" height="20" width="20"></apex:image></td>
+        </tr>
+
+       <tr>
+          <td></td>
+          <td><img src="images/blank.gif" width="1" height="10"></img></td>
+          <td></td>
+        </tr>
+
+       <tr>
+          <td></td>
+          <td>
+
+
+             <!-- begin inner white table -->
+
+      <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+        <tr>
+          <td><apex:image url="{!$Resource.white1}" height="20" width="20"></apex:image></td>
+          <td></td>
+          <td><apex:image url="{!$Resource.white2}" height="20" width="20"></apex:image></td>
+        </tr>
+       <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+       <tr>
+          <td></td>
+          <td>
+<!-- begin actual links -->
+
+
+<!--
+<div onclick="javascript:hideORshow('link1')" class="dlink"><b>Link 1</b></div>
+<table id="link1" >
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Test link 1</td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Test link 2</td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Test link 3</td></tr>
+</table>
+-->
+<table id="link1"></table>
+
+
+<div onclick="javascript:hideORshow('link2')" class="dlink"><b>SalesForce</b></div>
+<table id="link2" style="display:none">
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="https://login.salesforce.com/" target="_blank" class="navlink">Login</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Documents</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="https://test.salesforce.com/" target="_blank" class="navlink">Sandbox</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="https://trust.salesforce.com/" target="_blank" class="navlink">SF Trust</a></td></tr>
+</table>
+
+<div onclick="javascript:hideORshow('link3')" class="dlink"><b>Telephony</b></div>
+<table id="link3" style="display:none">
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="https://vs.n2p.com/" target="_blank" class="navlink">CVOSS</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="https://cortex.basecamphq.com/clients/3264561" target="_blank" class="navlink">Basecamp</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://atlanticbb.com/business-phone-manager/" target="_blank" class="navlink">Phone Manager</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://www.800forall.com/" target="_blank" class="navlink">800-4-all</a></td></tr>
+</table>
+
+<div onclick="javascript:hideORshow('link4')" class="dlink"><b>Support</b></div>
+<table id="link4" style="display:none">
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://help.atlanticbb.com" target="_blank" class="navlink">ABB Help</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="https://provision.jst.pa.atlanticbb.net/" target="_blank" class="navlink">Provisioning</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://abb.apollohq.com/" target="_blank" class="navlink">Apollo</a></td></tr>
+  <tr><td>&nbsp;</td></tr>
+</table>
+
+<div onclick="javascript:hideORshow('link5')" class="dlink"><b>HSD Services</b></div>
+<table id="link5" style="display:none">
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://oncall.abb.msad/ipplan/" target="_blank" class="navlink">IPPlan</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://abbvanity.echolabs.net/" target="_blank" class="navlink">ABB Vanity</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://support.echolabs.net/?group=atlanticbroadband" target="_blank" class="navlink">EchoLab Tickets</a></td></tr>
+  <tr><td>&nbsp;</td></tr>
+</table>
+
+<div onclick="javascript:hideORshow('link6')" class="dlink"><b>Email</b></div>
+<table id="link6" style="display:none">
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="_blank" class="navlink">Exchange</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://mail.atlanticbbn.net" target="_blank" class="navlink">ABBN</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://mail.atlanticbbn.net:8010" target="_blank" class="navlink">ABBN Admin</a></td></tr>
+  <tr><td>&nbsp;</td></tr>
+</table>
+
+<div onclick="javascript:hideORshow('link7')" class="dlink"><b>Training</b></div>
+<table id="link7" style="display:none">
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="training/SFtraining.html" target="main" class="navlink">SalesForce</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="training/Serviceability.html" target="main" class="navlink">Serviceability</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="training/PRItraining.html" target="main" class="navlink">PRI</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="training/.html" target="main" class="navlink"></a></td></tr>
+</table>
+
+<div onclick="javascript:nonlink('contacts')" class="dlink"><b>Contacts</b></div>
+<table id="link8" style="display:none">
+  <tr><td>&nbsp;</td></tr>
+</table>
+
+<div onclick="javascript:hideORshow('link9')" class="dlink"><b>Links/Resources</b></div>
+<table id="link9" style="display:none">
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="http://172.23.249.23:8081/" target="_new" class="navlink">COPS Tracker</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Link 2</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Link 3</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Link 4</a></td></tr>
+</table>
+
+<!--
+<div onclick="javascript:hideORshow('link10')" class="dlink"><b>Projects</b></div>
+<table id="link10" style="display:none">
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Link 1</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Link 2</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Link 3</a></td></tr>
+  <tr><td><img src="{!$Resource.dotted}"></img><a href="#" target="main" class="navlink">Link 4</a></td></tr>
+</table>
+-->
+
+<apex:image url="{!$Resource.vanright}" width="156" height="112"></apex:image>
+
+
+<!-- <img src="vanright" width="156" height="112"></img> -->
+
+
+
+<!-- end actual links -->
+
+
+
+          </td>
+          <td></td>
+        </tr>
+       <tr>
+          <td><apex:image url="{!$Resource.white3}" height="20" width="20"></apex:image></td>
+          <td><img src="images/blank.gif" border="0" height="1" width="145"></img></td>
+          <td><apex:image url="{!$Resource.white4}" height="20" width="20"></apex:image></td>
+        </tr>
+      </table>
+
+             <!-- end inner white table -->
+
+
+          </td>
+          <td></td>
+        </tr>
+       <tr>
+          <td><apex:image url="{!$Resource.blue3}" height="20" width="20"></apex:image></td>
+          <td></td>
+          <td><apex:image url="{!$Resource.blue4}" height="20" width="20"></apex:image></td>
+        </tr>
+      </table>
+      
+ </div>      
+   <!-- end outer blue table -->
+
+
+</td>
+
+<!-- <td valign="center"><a href="#" onclick="shrinknav()"> <img src="images/shrink.png" name="navadjust" border="0"></img></a></td> -->
+
+</tr>
+</table>
+
+</body>
+  
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

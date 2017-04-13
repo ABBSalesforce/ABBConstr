@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>37.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Page used  to display Hosted Voice Station information in an Actiongrid readingpane</description>
+    <label>Hosted Voice Station Details</label>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>49</minorNumber>
+        <namespace>CRMC_PP</namespace>
+    </packageVersions>
+</ApexPage>

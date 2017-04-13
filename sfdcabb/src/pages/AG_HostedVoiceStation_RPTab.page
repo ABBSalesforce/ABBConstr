@@ -1,0 +1,38 @@
+<apex:page standardController="Hosted_Voice_TN__c" showHeader="false" docType="html-4.01-strict">
+<apex:stylesheet value="{!URLFOR($Resource.CRMC_PP__SLDS080, '/assets/styles/salesforce-lightning-design-system-vf.css')}" />
+<style>
+select.fullWidth{
+width:100%; 
+}
+.font{
+        font: 12px Salesforce Sans,Arial,Helvetica,sans-serif;
+        font-weight: inherit;
+        text-align: center -21px;
+    }
+div.bPageBlock {
+        background-color: #ffffff !important;
+        border-color: #ffffff !important;
+}
+div.pbSubsection{
+        height: 650px;
+}
+
+</style>
+<div>
+<apex:form id="refresh" >
+<apex:messages />
+<apex:pageBlock id="editBlock">
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!quickSave}" rerender="refresh" oncomplete="location.reload()"/>
+<apex:commandButton onclick="location.reload()" value="Cancel" rerender="refresh"/>
+</apex:pageBlockButtons>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Hosted_Voice_TN__c.FieldSets.AG_Hosted_Voice_Station_RL}" var="field">
+        <apex:inputField value="{!Hosted_Voice_TN__c[field]}" styleClass="fullWidth"/>
+    </apex:repeat>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</div>
+ 
+</apex:page>

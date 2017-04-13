@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ActionGrid_oauth</fullName>
+    <apiAccessLevel>Unrestricted</apiAccessLevel>
+    <modules>
+        <module>
+            <label>ActionGrid_oauth</label>
+            <moduleType>connected</moduleType>
+            <name>ActionGrid_oauth</name>
+            <types>
+                <members>ActionGrid_oauth_devConfig</members>
+                <name>ConnectivityDevConfigMetadata</name>
+            </types>
+            <types>
+                <members>CRMC_PP__ActionGrid_oauth</members>
+                <name>Module</name>
+            </types>
+            <version>15.0</version>
+        </module>
+    </modules>
+    <namespacePrefix>CRMC_PP</namespacePrefix>
+    <version>36.0</version>
+</Package>

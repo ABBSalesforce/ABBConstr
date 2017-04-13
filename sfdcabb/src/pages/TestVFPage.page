@@ -1,0 +1,35 @@
+<apex:page standardController="Account" showheader="false" sidebar="true">
+   <apex:form >
+      <apex:pageBlock >
+         <apex:pageBlockSection >
+            <apex:inputField value="{!Account.Account_Type__c}"/>   
+            <apex:inputField value="{!Account.Name}"/>   
+         </apex:pageBlockSection>
+      </apex:pageBlock>
+
+      <apex:pageBlock >
+         <apex:pageBlockSection >
+            <apex:messages >
+                 Test:  Page Block Section. 
+            </apex:messages>
+         </apex:pageBlockSection>
+         
+         
+         <apex:pageBlockSection >
+         <apex:pageBlockSectionItem >
+              test:  Page Block Section Item
+              <apex:inputField value="{!Account.Phone}"/>   
+         </apex:pageBlockSectionItem>>   
+         </apex:pageBlockSection>
+         
+         
+         <apex:commandButton value="Save" Action="{!save}" />
+
+
+
+      </apex:pageBlock>
+      
+      
+   </apex:form>
+   
+</apex:page>
